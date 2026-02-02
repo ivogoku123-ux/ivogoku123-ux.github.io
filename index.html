@@ -2,48 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Planetabubuls</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Mi Página</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- VIDEO FONDO -->
-  <video class="video-bg" autoplay loop muted>
+  <!-- VIDEO DE FONDO -->
+  <video class="video-bg" autoplay loop muted playsinline>
     <source src="bg.mp4" type="video/mp4">
   </video>
 
-  <!-- MÚSICA -->
-  <audio id="music" src="music.mp3" loop></audio>
+  <!-- MUSICA -->
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
 
-  <!-- OVERLAY SONIDO -->
+  <!-- OVERLAY PARA ACTIVAR SONIDO -->
   <div id="soundOverlay" onclick="startMusic()">
-    🎧
-    <span>TOCAR PARA ACTIVAR SONIDO</span>
+    <span>ACTIVAR SONIDO</span>
   </div>
 
-  <!-- CARD -->
+  <!-- CONTENIDO -->
   <div class="card">
-    <h1>🌍 Planetabubuls</h1>
-    <p>Fondo animado + música</p>
+    <h1>Bienvenido</h1>
+    <p>Mi página con música y video</p>
+    <a href="#">Mi link</a>
   </div>
 
+  <!-- SCRIPT -->
   <script>
-    const music = document.getElementById("music");
-    const overlay = document.getElementById("soundOverlay");
-
-    if (localStorage.getItem("musicEnabled") === "true") {
-      music.volume = 0.6;
-      music.play();
-      overlay.style.display = "none";
-    }
-
     function startMusic() {
-      music.volume = 0.6;
+      const music = document.getElementById("music");
+      music.volume = 1;
       music.play();
-      localStorage.setItem("musicEnabled", "true");
-      overlay.style.display = "none";
+
+      document.getElementById("soundOverlay").style.display = "none";
     }
   </script>
 
