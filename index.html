@@ -5,50 +5,45 @@
   <title>Planetabubuls</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- ESTRELLAS -->
-  <div class="stars"></div>
+  <!-- VIDEO DE FONDO -->
+  <video class="video-bg" autoplay muted loop>
+    <source src="bg.mp4" type="video/mp4">
+  </video>
+
+  <!-- MÚSICA -->
+  <audio id="music" src="music.mp3" loop></audio>
+
+  <!-- BOTÓN MÚSICA -->
+  <button class="music-btn" onclick="toggleMusic()">🔊</button>
 
   <!-- CARD -->
   <div class="card">
-    <h1 class="title">🌍 Planetabubuls</h1>
-    <p>Web creada con GitHub Pages</p>
-    <p>Usuario: ivogoku123-ux</p>
+    <h1>🌍 Planetabubuls</h1>
+    <p>Web con fondo animado + música</p>
 
-    <a class="btn" href="https://github.com/ivogoku123-ux" target="_blank">
-      🚀 Ver mi GitHub
+    <a href="https://github.com/ivogoku123-ux" target="_blank">
+      🚀 Mi GitHub
     </a>
   </div>
 
-  <!-- MÚSICA -->
-  <audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <button class="music-btn" onclick="toggleMusic()">🎵 Música</button>
-
   <script>
-    const music = document.getElementById("bgMusic");
+    const music = document.getElementById("music");
     const btn = document.querySelector(".music-btn");
 
     function toggleMusic() {
       if (music.paused) {
-        music.volume = 0.3; // volumen bajito
         music.play();
-        btn.textContent = "🔇 Pausar";
+        btn.textContent = "🔈";
       } else {
         music.pause();
-        btn.textContent = "🎵 Música";
+        btn.textContent = "🔊";
       }
     }
   </script>
 
 </body>
 </html>
-
-
