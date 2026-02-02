@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <title>Planetabubuls</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- ESTRELLAS -->
   <div class="stars"></div>
 
+  <!-- CARD -->
   <div class="card">
     <h1 class="title">🌍 Planetabubuls</h1>
     <p>Web creada con GitHub Pages</p>
@@ -20,6 +24,29 @@
       🚀 Ver mi GitHub
     </a>
   </div>
+
+  <!-- MÚSICA -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">🎵 Música</button>
+
+  <script>
+    const music = document.getElementById("bgMusic");
+    const btn = document.querySelector(".music-btn");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.volume = 0.3; // volumen bajito
+        music.play();
+        btn.textContent = "🔇 Pausar";
+      } else {
+        music.pause();
+        btn.textContent = "🎵 Música";
+      }
+    }
+  </script>
 
 </body>
 </html>
