@@ -1,9 +1,8 @@
-/* ===== RESET ===== */
 * {
   box-sizing: border-box;
 }
 
-/* ===== FONDO ANIMADO ===== */
+/* FONDO */
 body {
   margin: 0;
   min-height: 100vh;
@@ -14,63 +13,63 @@ body {
   overflow: hidden;
 }
 
-/* ===== ANIMACIÓN FONDO ===== */
+/* fondo animado */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ===== ESTRELLAS ===== */
+/* ESTRELLAS */
 .stars {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
+  inset: 0;
   pointer-events: none;
+  z-index: 0;
 }
 
 .stars::before,
 .stars::after {
   content: "";
   position: absolute;
+  top: -100vh;
   width: 2px;
   height: 2px;
   background: white;
   box-shadow:
-    100px 200px white,
-    200px 600px white,
-    300px 100px white,
-    400px 800px white,
-    600px 300px white,
-    800px 700px white,
-    1000px 200px white,
-    1200px 500px white,
-    1400px 900px white,
-    1600px 400px white,
-    1800px 600px white;
-  animation: starsFall 25s linear infinite;
+    80px 120px white,
+    180px 420px white,
+    280px 220px white,
+    380px 820px white,
+    480px 620px white,
+    580px 320px white,
+    680px 720px white,
+    780px 520px white,
+    880px 920px white,
+    980px 120px white,
+    1080px 420px white,
+    1180px 820px white,
+    1280px 620px white,
+    1380px 320px white,
+    1480px 720px white,
+    1580px 520px white,
+    1680px 920px white;
+  animation: starsFall 18s linear infinite;
 }
 
 .stars::after {
   left: 50%;
-  opacity: 0.5;
-  animation-duration: 35s;
+  opacity: 0.6;
+  animation-duration: 28s;
 }
 
-/* ===== ANIMACIÓN ESTRELLAS ===== */
+/* estrellas cayendo */
 @keyframes starsFall {
-  from {
-    transform: translateY(-200%);
-  }
-  to {
-    transform: translateY(200%);
-  }
+  from { top: -100vh; }
+  to { top: 100vh; }
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card {
   position: relative;
   z-index: 2;
@@ -84,39 +83,26 @@ body {
   text-align: center;
   color: white;
   animation: fadeUp 1s ease forwards;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.card:hover {
-  transform: scale(1.04);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
-}
-
-/* ===== ENTRADA ===== */
+/* entrada */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== TÍTULO ===== */
+/* título flotando */
 .title {
-  margin-bottom: 10px;
   animation: float 4s ease-in-out infinite;
 }
 
-/* ===== FLOTAR ===== */
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0); }
 }
 
-/* ===== TEXTO ===== */
-p {
-  color: #cfd8dc;
-}
-
-/* ===== BOTÓN ===== */
+/* botón */
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -132,4 +118,8 @@ p {
 .btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.9);
+}
+
+p {
+  color: #cfd8dc;
 }
