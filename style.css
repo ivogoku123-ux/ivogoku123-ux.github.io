@@ -54,13 +54,13 @@ body {
     1480px 720px white,
     1580px 520px white,
     1680px 920px white;
-  animation: starsFall 18s linear infinite;
+  animation: starsFall 20s linear infinite;
 }
 
 .stars::after {
   left: 50%;
   opacity: 0.6;
-  animation-duration: 28s;
+  animation-duration: 30s;
 }
 
 /* estrellas cayendo */
@@ -102,7 +102,11 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* botón */
+p {
+  color: #cfd8dc;
+}
+
+/* BOTÓN GITHUB */
 .btn {
   display: inline-block;
   margin-top: 15px;
@@ -120,6 +124,17 @@ body {
   box-shadow: 0 0 25px rgba(0, 200, 255, 0.9);
 }
 
-p {
-  color: #cfd8dc;
+/* BOTÓN MÚSICA */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
 }
