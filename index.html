@@ -9,39 +9,41 @@
 </head>
 <body>
 
-  <!-- VIDEO DE FONDO -->
-  <video class="video-bg" autoplay muted loop>
+  <!-- VIDEO FONDO -->
+  <video class="video-bg" autoplay loop muted>
     <source src="bg.mp4" type="video/mp4">
   </video>
 
   <!-- MÚSICA -->
   <audio id="music" src="music.mp3" loop></audio>
 
-  <!-- BOTÓN MÚSICA -->
-  <button class="music-btn" onclick="toggleMusic()">🔊</button>
+  <!-- OVERLAY SONIDO -->
+  <div id="soundOverlay" onclick="startMusic()">
+    🎧
+    <span>TOCAR PARA ACTIVAR SONIDO</span>
+  </div>
 
   <!-- CARD -->
   <div class="card">
     <h1>🌍 Planetabubuls</h1>
-    <p>Web con fondo animado + música</p>
-
-    <a href="https://github.com/ivogoku123-ux" target="_blank">
-      🚀 Mi GitHub
-    </a>
+    <p>Fondo animado + música</p>
   </div>
 
   <script>
     const music = document.getElementById("music");
-    const btn = document.querySelector(".music-btn");
+    const overlay = document.getElementById("soundOverlay");
 
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-        btn.textContent = "🔈";
-      } else {
-        music.pause();
-        btn.textContent = "🔊";
-      }
+    if (localStorage.getItem("musicEnabled") === "true") {
+      music.volume = 0.6;
+      music.play();
+      overlay.style.display = "none";
+    }
+
+    function startMusic() {
+      music.volume = 0.6;
+      music.play();
+      localStorage.setItem("musicEnabled", "true");
+      overlay.style.display = "none";
     }
   </script>
 
